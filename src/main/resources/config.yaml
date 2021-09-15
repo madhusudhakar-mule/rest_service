@@ -1,0 +1,11 @@
+httpListener:
+  port: "8080"
+  path: "/myproducts"
+
+httpRequest:
+  host: "localhost"
+  port: "7070"
+  path: "/rest/products"
+  
+  
+  

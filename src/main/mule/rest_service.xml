@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="rest_serviceFlow" doc:id="305bc469-dccc-4730-8665-d61555880534" >
+		<http:listener doc:name="Listener" doc:id="f07a15c5-afba-454d-b669-02aa0a475a71" path="/product" config-ref="HTTP_Listener_service"/>
+		<logger level="INFO" doc:name="start" doc:id="dfeacdd1-db19-4f75-bee0-67a10dbfa695" message="------start-----------"/>
+		<http:request method="GET" doc:name="Request" doc:id="71f3f3b0-4226-49a4-958d-7297e15365d6" config-ref="HTTP_Request_Product_rest_service" path="${httpRequest.path}"/>
+		<logger level="INFO" doc:name="end" doc:id="3fbb1bbf-ffa5-4c09-924c-36fd6df8cb8a" message="---------------end----------------"/>
+	</flow>
+</mule>
